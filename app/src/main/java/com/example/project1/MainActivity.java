@@ -1,40 +1,62 @@
-package com.example.project1;
+package com.example.project1.;
 
 import android.os.Bundle;
-import com.example.project1.R;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
-    private RecyclerView mRecyclerView;
-    private MyAdapter mRecyclerAdapter;
-    private ArrayList<Item> mfriendItems;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+
+import java.util.ArrayList;
+import com.google.android.material.tabs.TabLayout;
+
+public class MainActivity extends FragmentActivity {
+
+    TabLayout tabs;
+
+    Fragment1 fragment1;
+    Fragment2 fragment2;
+    Fragment3 fragment3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        fragment1 = new Fragment1();
+        fragment2 = new Fragment2();
+        fragment3 = new Fragment3();
 
-        /* initiate adapter */
-        mRecyclerAdapter = new MyAdapter();
+        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment1).commit();
 
-        /* initiate recyclerview */
-        mRecyclerView.setAdapter(mRecyclerAdapter);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL,false));
+        tabs = findViewById(R.id.tabs);
+        tabs.addTab(tabs.newTab().setText("연락처"));
+        tabs.addTab(tabs.newTab().setText("이미지"));
+        tabs.addTab(tabs.newTab().setText("더보기"));
 
-        /* adapt data */
-        mfriendItems = new ArrayList<>();
-        for(int i=1;i<=10;i++){
-            mfriendItems.add(new Item(i,i+"번째 사람", "helloworld"));
-        }
-        mRecyclerAdapter.setFriendList(mfriendItems);
+        tabs.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                int position = tab.getPosition();
+                Fragment selected = null;
+                if(position == 0)
+                    selected = fragment1;
+                else if(position == 1)
+                    selected = fragment2;
+                else if(position == 2)
+                    selected = fragment3;
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, selected).commit();
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
     }
+
 }
