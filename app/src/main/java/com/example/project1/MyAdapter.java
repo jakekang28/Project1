@@ -13,6 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private ArrayList<Item> itemList;
 
+    public MyAdapter(ArrayList<Item> myData){
+        this.itemList = myData;
+    }
+
     @NonNull
     @Override
     public MyAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
