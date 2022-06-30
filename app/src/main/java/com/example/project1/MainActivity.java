@@ -32,7 +32,7 @@ public class MainActivity extends FragmentActivity {
         tabs.addTab(tabs.newTab().setText("이미지"));
         tabs.addTab(tabs.newTab().setText("더보기"));
 
-        tabs.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition();
