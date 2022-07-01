@@ -21,9 +21,10 @@ import android.widget.Toast;
 
 public class Fragment3 extends Fragment {
     RecyclerView recyclerView;
-    private VocaAdapter mAdapter;
+    VocaAdapter mAdapter;
     String eWord[] = {"sunny", "cloudy", "rainy", "snowy", "windy", "giraffe", "elephant", "turtle", "rabbit", "zebra", "baseball", "football", "basketball", "volleyball", "badminton", "KOREA", "JAPAN", "CHINA", "USA", "THAILAND"};
     String kWord[] = {"햇빛이 창창한", "구름 낀", "비가 오는", "눈이 내리는", "바람이 센", "기린", "코끼리", "거북", "토끼", "얼룩말", "야구", "축구", "농구", "배구", "배드민턴", "한국", "일본", "중국", "미국", "태국"};
+
     public GestureDetector gestureDetector;
 
     @Nullable
@@ -31,9 +32,10 @@ public class Fragment3 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragmentdisplay3, container, false);
 
-        recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) rootView.findViewById(R.id.view);
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         layoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS);
+
         recyclerView.setLayoutManager(layoutManager);
         mAdapter = new VocaAdapter();
         recyclerView.setAdapter(mAdapter);
@@ -48,15 +50,21 @@ public class Fragment3 extends Fragment {
         recyclerView.addOnItemTouchListener(onItemTouchListener);
         return rootView;
     }
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
     public void makeData(){
         for(int i=0;i<20;i++)
         {
             Dataset data = new Dataset();
-            data.image = ResourcesCompat.getDrawable(getResources(),R.drawable.pic0 + i,null);
+            final int[] picarray = {R.drawable.pic0,R.drawable.pica,R.drawable.picb,R.drawable.picc,R.drawable.picd,R.drawable.pice,R.drawable.picf,R.drawable.picg,R.drawable.pich,R.drawable.pici,R.drawable.picj,R.drawable.pick,R.drawable.picl,R.drawable.picm,R.drawable.picn,R.drawable.pico,R.drawable.picp,R.drawable.picq,R.drawable.picr,R.drawable.pics};
+            data.image = ContextCompat.getDrawable(getContext(),picarray[i]);
             data.text = eWord[i];
             mAdapter.add(data);
         }
     }
+
     RecyclerView.OnItemTouchListener onItemTouchListener = new RecyclerView.OnItemTouchListener() {
         @Override
         public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {

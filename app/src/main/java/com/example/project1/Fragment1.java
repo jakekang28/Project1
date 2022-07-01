@@ -36,12 +36,12 @@ public class Fragment1 extends Fragment {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
+        prepareData();
         return rootView;
     }
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        prepareData();
     }
     private void prepareData(){
     phonelist.add(new Item(1,"넙죽1", "010-1234-5678"));
