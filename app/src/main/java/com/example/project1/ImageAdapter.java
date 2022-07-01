@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,9 +46,11 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.imgViewHolde
     public static class imgViewHolder extends RecyclerView.ViewHolder{
         public ImageView imageView;
         public Button btn;
-
+        private LinearLayout layout;
         public imgViewHolder(View itemView){
             super(itemView);
+
+            layout = (LinearLayout)itemView.findViewById(R.id.imagecontents);
             imageView = itemView.findViewById(R.id.image_example);
             btn = itemView.findViewById(R.id.biggerimage);
         }
