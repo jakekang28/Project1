@@ -16,7 +16,14 @@ import androidx.fragment.app.Fragment;
 public class BigImage extends AppCompatActivity {
     private ImageView imgview;
 
-    public BigImage(int pos){
+    public BigImage(){}
+
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.bigimageview);
+
+        Intent intent = getIntent();
+        int pos = intent.getExtras().getInt("position");
         switch(pos){
             case 1:
                 imgview.setImageResource(R.drawable.image1);
@@ -35,11 +42,6 @@ public class BigImage extends AppCompatActivity {
             default:
                 imgview.setImageResource(R.drawable.error);
         }
-    }
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.bigimageview);
-
         Button exitbtn = (Button)findViewById(R.id.button3);
         exitbtn.setOnClickListener(new View.OnClickListener(){
             @Override

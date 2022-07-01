@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -42,26 +40,19 @@ public class Fragment2 extends Fragment {
         recyclerView.setAdapter(iAdapter);
 
         int[] picarray={0, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image5, R.drawable.image6, R.drawable.image7};
-        for(int i=1;i<=7;i++){
+        for(int i = 1; i <= 7; i++){
             Drawable drawable = ContextCompat.getDrawable(getContext(), picarray[i]);
             imageList.add(new Image(drawable, Integer.toString(i)));
         }
 
-        ImageView imageView = (ImageView)rootView.findViewById(R.id.image_example);
         Button btn = (Button)rootView.findViewById(R.id.biggerimage);
-        btn.setOnClickListener(new Button.OnClickListener(){
+
+        iAdapter.setOnItemClicklistener(new OnPersonItemClickListener(){
             @Override
-            public void onClick(View view){
-                BigImage bigImage = null;
-
-                CharSequence cs = new StringBuffer(btn.getText());
-                String text = cs.toString();
-                int pos = Integer.parseInt(text);
-                bigImage = new BigImage(pos);
-
-                //TODO view change to bigimageview
-                Intent intent1 = new Intent(getActivity(), BigImage.class);
-                startActivity(intent1);
+            public void onItemClick(ImageAdapter.imgViewHolder holder, View view, int pos) {
+                Intent intent = new Intent(getActivity(), BigImage.class);
+                intent.putExtra("position", pos);
+                startActivity(intent);
             }
         });
         return rootView;
