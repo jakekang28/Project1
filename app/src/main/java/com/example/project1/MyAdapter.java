@@ -1,5 +1,4 @@
 package com.example.project1;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,53 +8,81 @@ import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    private ArrayList<Item> itemList;
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> implements OnItemClickListener{
+    private ArrayList<Item> items = new ArrayList<Item>();
+    private static OnItemClickListener listener;
 
     public MyAdapter(ArrayList<Item> myData){
-        this.itemList = myData;
+        this.items = myData;
     }
 
     @NonNull
     @Override
     public MyAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recyclerview, parent, false);
-        return new ViewHolder(view);
+        return new ViewHolder(view,this);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.onBind(itemList.get(position));
+        holder.onBind(items.get(position));
     }
 
     public void setFriendList(ArrayList<Item> list){
-        this.itemList = list;
+        this.items = list;
         notifyDataSetChanged();
     }
 
 
     @Override
     public int getItemCount() {
-        return itemList.size();
+        return items.size();
+    }
+    public void setOnItemClicklistener(OnItemClickListener listener){
+        this.listener = listener;
+    }
+    @Override
+    public void onItemClick(ViewHolder holder, View view, int position) {
+        if(listener != null){
+            listener.onItemClick(holder,view,position);
+        }
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
 
+    static class ViewHolder extends RecyclerView.ViewHolder {
         TextView name;
         TextView message;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView,final OnItemClickListener listener) {
             super(itemView);
-
             name = (TextView) itemView.findViewById(R.id.name);
             message = (TextView) itemView.findViewById(R.id.message);
-        }
 
-        void onBind(Item item){
+            itemView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v)
+                {
+                    int pos = getAdapterPosition();
+                    if(pos != RecyclerView.NO_POSITION){
+                        if(listener != null){
+                            listener.onItemClick(ViewHolder.this, v,pos);
+                        }
+                    }
+                }
+            });
+        }
+        void onBind(Item item) {
             name.setText(item.getName());
             message.setText(item.getMessage());
         }
     }
-
+    public void setItems(ArrayList<Item> items){
+        this.items = items;
+    }
+    public Item getItem(int position){
+        return items.get(position);
+    }
+    public void setItem(int position, Item item){
+        items.set(position,item);
+    }
 }

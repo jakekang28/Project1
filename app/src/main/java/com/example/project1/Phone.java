@@ -7,11 +7,6 @@ public class Phone {
     public Phone(){
 
     }
-    public Phone(String name, String number)
-    {
-        this.name = name;
-        this.number = number;
-    }
 
     public String getName() {
         return name;
