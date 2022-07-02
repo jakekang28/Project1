@@ -7,24 +7,16 @@
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/drawable/pic0.xml" value="0.161" />
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/activity_main.xml" value="0.12" />
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/bigimageview.xml" value="0.1" />
+        <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/callactivity.xml" value="0.136" />
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/fragment1.xml" value="0.22146739130434784" />
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/fragment2contents.xml" value="0.1" />
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/fragmentdisplay1.xml" value="0.176" />
-        <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/fragmentdisplay2.xml" value="0.22146739130434784" />
+        <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/fragmentdisplay2.xml" value="0.176" />
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/fragmentdisplay3.xml" value="0.176" />
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/image.xml" value="0.264" />
-        <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/item_recyclerview.xml" value="0.11200000000000002" />
+        <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/item_recyclerview.xml" value="0.2" />
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/phonenum_adapter.xml" value="0.1" />
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/phonenum_rv.xml" value="0.1" />
-        <entry key="..\:/Users/yejin/Documents/GitHub/Project1/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
-        <entry key="..\:/Users/yejin/Documents/GitHub/Project1/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/yejin/Documents/GitHub/Project1/app/src/main/res/layout/bigimageview.xml" value="0.2390625" />
-        <entry key="..\:/Users/yejin/Documents/GitHub/Project1/app/src/main/res/layout/fragment2contents.xml" value="0.1" />
-        <entry key="..\:/Users/yejin/Documents/GitHub/Project1/app/src/main/res/layout/fragmentdisplay1.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/yejin/Documents/GitHub/Project1/app/src/main/res/layout/fragmentdisplay2.xml" value="0.1" />
-        <entry key="..\:/Users/yejin/Documents/GitHub/Project1/app/src/main/res/layout/fragmentdisplay3.xml" value="0.1" />
-        <entry key="..\:/Users/yejin/Documents/GitHub/Project1/app/src/main/res/layout/image.xml" value="0.1" />
-        <entry key="..\:/Users/yejin/Documents/GitHub/Project1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
       </map>
     </option>
   </component>

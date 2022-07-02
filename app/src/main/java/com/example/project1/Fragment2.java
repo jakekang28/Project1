@@ -23,13 +23,13 @@ import java.util.ArrayList;
 
 public class Fragment2 extends Fragment {
 
-    private ArrayList<Drawable> imageList = new ArrayList<>();
     private RecyclerView recyclerView;
     private ImageAdapter iAdapter;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        ArrayList<Drawable> imageList = new ArrayList<>();
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragmentdisplay2, container, false);
 
         int[] picarray={0, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image5, R.drawable.image6, R.drawable.image7,

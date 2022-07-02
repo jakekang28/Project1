@@ -33,7 +33,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> implem
         notifyDataSetChanged();
     }
 
-
+    public void add(Item item){
+        items.add(item);
+        notifyDataSetChanged();
+    }
     @Override
     public int getItemCount() {
         return items.size();
@@ -47,7 +50,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> implem
             listener.onItemClick(holder,view,position);
         }
     }
-
+    @Override
+    public int getItemViewType(int position){
+        return position;
+    }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView name;
@@ -73,7 +79,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> implem
         }
         void onBind(Item item) {
             name.setText(item.getName());
-            message.setText(item.getMessage());
+            message.setText(item.getNumber());
         }
     }
     public void setItems(ArrayList<Item> items){

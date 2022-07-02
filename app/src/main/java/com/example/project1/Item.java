@@ -2,36 +2,22 @@ package com.example.project1;
 
 public class Item {
     String name;
-    String message;
-    int resourceId;
+    String number;
 
-    public Item(int resourceId, String name, String message) {
-        this.name = name;
-        this.message= message;
-        this.resourceId = resourceId;
-    }
-
-    public int getResourceId() {
-        return resourceId;
-    }
-
-    public String getMessage() {
-        return message;
+    public String getNumber() {
+        return number;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setResourceId(int resourceId) {
-        this.resourceId = resourceId;
-    }
 }
