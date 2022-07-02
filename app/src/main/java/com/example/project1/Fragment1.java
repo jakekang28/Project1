@@ -52,7 +52,7 @@ public class Fragment1 extends Fragment {
                         Toast.LENGTH_LONG).show();
             }
         });
-
+        prepareData();
         return rootView;
     }
 
