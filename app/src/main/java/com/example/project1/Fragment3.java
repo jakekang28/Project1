@@ -36,6 +36,7 @@ public class Fragment3 extends Fragment {
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         layoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS);
 
+
         recyclerView.setLayoutManager(layoutManager);
         mAdapter = new VocaAdapter();
         recyclerView.setAdapter(mAdapter);
