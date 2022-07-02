@@ -19,8 +19,7 @@ import java.util.ArrayList;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.imgViewHolder> implements OnPersonItemClickListener{
 
-    private ArrayList<Image> images = new ArrayList<>();
-    private int[] picarray;
+    private ArrayList<Image> images;
     OnPersonItemClickListener listener;
 
     public ImageAdapter(ArrayList<Image> imageList){
@@ -66,9 +65,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.imgViewHolde
 
         public imgViewHolder(View itemView, final OnPersonItemClickListener listener){
             super(itemView);
-            imageView = itemView.findViewById(R.id.image_example);
+            imageView = (ImageView)itemView.findViewById(R.id.image_example);
             //btn 객체 없앨까 고민중...
-            btn = itemView.findViewById(R.id.biggerimage);
+            btn = (Button)itemView.findViewById(R.id.biggerimage);
 
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override
