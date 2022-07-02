@@ -21,6 +21,7 @@ public class BigImage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bigimageview);
         ImageView imgview = (ImageView)findViewById(R.id.bigimage);
+        ImageView imgview2 = (ImageView)findViewById(R.id.type_normal);
 
         Intent intent = getIntent();
         int pos = intent.getIntExtra("position", 0);

@@ -12,7 +12,10 @@
         android:id="@+id/image_example"
         android:layout_width="match_parent"
         android:layout_height="83dp"
+        android:padding="8dp"
         android:layout_weight="1"
-        android:scaleType="fitCenter" />
-
+        android:background="@drawable/xml_border"
+        android:scaleType="fitCenter"
+        android:layout_margin="1dp"
+        />
 </LinearLayout>
