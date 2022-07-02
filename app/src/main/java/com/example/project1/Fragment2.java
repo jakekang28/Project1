@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -16,12 +17,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import java.util.ArrayList;
 
 public class Fragment2 extends Fragment {
 
-    private ArrayList<Image> imageList = new ArrayList<>();
+    private ArrayList<Drawable> imageList = new ArrayList<>();
     private RecyclerView recyclerView;
     private ImageAdapter iAdapter;
 
@@ -30,20 +32,21 @@ public class Fragment2 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragmentdisplay2, container, false);
 
-        int[] picarray={0, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image5, R.drawable.image6, R.drawable.image7};
-        for(int i = 1; i <= 7; i++){
+        int[] picarray={0, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image5, R.drawable.image6, R.drawable.image7,
+                R.drawable.image8, R.drawable.image9, R.drawable.image10, R.drawable.image11, R.drawable.image12, R.drawable.image13, R.drawable.image14, R.drawable.image15
+            ,R.drawable.image16, R.drawable.image17, R.drawable.image18, R.drawable.image19, R.drawable.image20};
+
+        for(int i = 1; i <= 20; i++){
             Drawable drawable = ContextCompat.getDrawable(getContext(), picarray[i]);
-            imageList.add(new Image(drawable, Integer.toString(i)));
+            imageList.add(drawable);
         }
-        //RecyclerView, Adapter add
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL);
+        layoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS);
+
+        recyclerView.setLayoutManager(layoutManager);
         iAdapter = new ImageAdapter(imageList);
         recyclerView.setAdapter(iAdapter);
-
-        //Layout manager add
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         iAdapter.setOnItemClicklistener(new OnPersonItemClickListener(){
             @Override
