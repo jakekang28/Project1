@@ -38,7 +38,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.imgViewHolde
         Image curimage = images.get(position);
         holder.btn.setText(curimage.button);
         holder.imageView.setImageDrawable(curimage.image);
-
     }
     @Override
     public int getItemCount(){

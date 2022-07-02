@@ -9,5 +9,4 @@ public class Image {
         this.image = image;
         this.button = button;
     }
-
 }
