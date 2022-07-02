@@ -47,8 +47,47 @@ public class BigImage extends AppCompatActivity {
             case 7:
                 imgview.setImageResource(R.drawable.image7);
                 break;
+            case 8:
+                imgview.setImageResource(R.drawable.image8);
+                break;
+            case 9:
+                imgview.setImageResource(R.drawable.image9);
+                break;
+            case 10:
+                imgview.setImageResource(R.drawable.image10);
+                break;
+            case 11:
+                imgview.setImageResource(R.drawable.image11);
+                break;
+            case 12:
+                imgview.setImageResource(R.drawable.image12);
+                break;
+            case 13:
+                imgview.setImageResource(R.drawable.image13);
+                break;
+            case 14:
+                imgview.setImageResource(R.drawable.image14);
+                break;
+            case 15:
+                imgview.setImageResource(R.drawable.image15);
+                break;
+            case 16:
+                imgview.setImageResource(R.drawable.image16);
+                break;
+            case 17:
+                imgview.setImageResource(R.drawable.image17);
+                break;
+            case 18:
+                imgview.setImageResource(R.drawable.image18);
+                break;
+            case 19:
+                imgview.setImageResource(R.drawable.image19);
+                break;
+            case 20:
+                imgview.setImageResource(R.drawable.image20);
+                break;
             default:
-                imgview.setImageResource(R.drawable.error);
+                imgview.setImageResource(R.drawable.pic0);
                 break;
         }
 

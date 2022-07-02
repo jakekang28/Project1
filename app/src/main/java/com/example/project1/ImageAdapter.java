@@ -19,10 +19,10 @@ import java.util.ArrayList;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.imgViewHolder> implements OnPersonItemClickListener{
 
-    private ArrayList<Image> images;
+    private ArrayList<Drawable> images;
     OnPersonItemClickListener listener;
 
-    public ImageAdapter(ArrayList<Image> imageList){
+    public ImageAdapter(ArrayList<Drawable> imageList){
         images = imageList;
     }
 
@@ -35,9 +35,8 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.imgViewHolde
 
     @Override
     public void onBindViewHolder(imgViewHolder holder, int position){
-        Image curimage = images.get(position);
-        holder.btn.setText(curimage.button);
-        holder.imageView.setImageDrawable(curimage.image);
+        Drawable curimage = images.get(position);
+        holder.imageView.setImageDrawable(curimage);
     }
     @Override
     public int getItemCount(){
@@ -55,9 +54,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.imgViewHolde
         }
     }
 
-    public Image getItem(int position){
-        return images.get(position);
-    }
     public static class imgViewHolder extends RecyclerView.ViewHolder{
         public ImageView imageView;
         public Button btn;
@@ -65,9 +61,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.imgViewHolde
         public imgViewHolder(View itemView, final OnPersonItemClickListener listener){
             super(itemView);
             imageView = (ImageView)itemView.findViewById(R.id.image_example);
-            //btn 객체 없앨까 고민중...
-            btn = (Button)itemView.findViewById(R.id.biggerimage);
-
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
