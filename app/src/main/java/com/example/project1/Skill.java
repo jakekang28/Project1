@@ -7,6 +7,13 @@ public class Skill {
     double prob;
     int count;
     int power;
+
+    Skill(String type,double prob, int count, int power){
+        this.type = type;
+        this.prob = prob;
+        this.count = count;
+        this.power = power;
+    }
     public String getType(Skill skill){
         return skill.type;
     }
