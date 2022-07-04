@@ -15,6 +15,7 @@ public class MainActivity extends FragmentActivity {
     Fragment1 fragment1;
     Fragment2 fragment2;
     Fragment3 fragment3;
+    Fragment4 fragment4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class MainActivity extends FragmentActivity {
         fragment1 = new Fragment1();
         fragment2 = new Fragment2();
         fragment3 = new Fragment3();
+        fragment4 = new Fragment4();
 
         getSupportFragmentManager().beginTransaction().add(R.id.container, fragment1).commit();
 
@@ -31,6 +33,7 @@ public class MainActivity extends FragmentActivity {
         tabs.addTab(tabs.newTab().setText("연락처"));
         tabs.addTab(tabs.newTab().setText("이미지"));
         tabs.addTab(tabs.newTab().setText("더보기"));
+        tabs.addTab(tabs.newTab().setText("배틀"));
 
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -43,6 +46,8 @@ public class MainActivity extends FragmentActivity {
                     selected = fragment2;
                 else if(position == 2)
                     selected = fragment3;
+                else if(position == 3)
+                    selected = fragment4;
                 getSupportFragmentManager().beginTransaction().replace(R.id.container, selected).commit();
             }
 

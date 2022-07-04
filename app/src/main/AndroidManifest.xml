@@ -26,5 +26,6 @@
         <activity android:name=".CallActivity"/>
         <activity android:name=".BigImage"/>
         <activity android:name=".Pokemonclip"/>
+        <activity android:name=".pokemonPick"/>
     </application>
 </manifest>
