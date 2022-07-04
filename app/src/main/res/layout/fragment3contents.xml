@@ -27,19 +27,17 @@
         android:id="@+id/word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/type1"
-        tools:layout_editor_absoluteX="33dp" />
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="470dp" />
 
     <TextView
         android:id="@+id/pronounciation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
         android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/word"
-        tools:layout_editor_absoluteY="468dp" />
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="470dp" />
 
     <TextView
         android:id="@+id/type1"
@@ -51,22 +49,19 @@
 
     <TextView
         android:id="@+id/meaning1"
-        android:layout_width="233dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="100dp"
+        android:layout_width="204dp"
+        android:layout_height="31dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/type1"
-        app:layout_constraintStart_toStartOf="@+id/type1"
-        tools:layout_editor_absoluteY="514dp" />
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="506dp" />
 
     <TextView
         android:id="@+id/type2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:text="TextView"
-        app:layout_constraintTop_toTopOf="@+id/type1"
-        tools:layout_editor_absoluteX="33dp" />
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="563dp" />
 
     <TextView
         android:id="@+id/meaning2"
@@ -80,18 +75,16 @@
         android:id="@+id/example"
         android:layout_width="233dp"
         android:layout_height="23dp"
-        android:layout_marginStart="100dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/type2"
-        app:layout_constraintStart_toStartOf="@+id/type2"
-        tools:layout_editor_absoluteY="548dp" />
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="559dp" />
 
     <TextView
         android:id="@+id/example_korean"
-        android:layout_width="337dp"
-        android:layout_height="27dp"
+        android:layout_width="328dp"
+        android:layout_height="28dp"
         android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/meaning2"
-        tools:layout_editor_absoluteY="670dp" />
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="673dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

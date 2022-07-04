@@ -1,0 +1,195 @@
+{ "Vocabulary" :  [
+  {
+    "word": "sunny",
+    "pronunciation": "[sʌni]",
+    "type1": "형용사",
+    "meaning1": "1. 화창한, 햇살이(눈부시게) 내리쬐는",
+    "type2": "형용사",
+    "meaning2": "2. 명량한",
+    "example": "It's sunny today, so I'm going to work in the garden.",
+    "example_korean": "오늘은 날이 화창하니 정원에서 작업해야겠다."
+  },
+  {
+    "word": "cloudy",
+    "pronunciation": "[klaʊdi]",
+    "type1": "형용사",
+    "meaning1": "흐린, 구름이 잔뜩 낀(<->clear)",
+    "type2": "형용사",
+    "meaning2": "탁한, 흐린",
+    "example": "It's cloudy today, but the weather forecast isn't predicting any rain.",
+    "example_korean": "오늘은 흐린 날이지만 일기 예보에 따르면 비는 안 올 것이다."
+  },
+  {
+    "word": "rainy",
+    "pronunciation": "[reɪni]",
+    "type1": "형용사",
+    "meaning1": "비가 오는",
+    "example": "It had been a rainy week and Tamsin was boared of being stuck in the house.",
+    "example_korean": "이번 주에 비가 왔고 탐신은 집에 갇히는 것이 싫증이 났다."
+  },
+  {
+    "word": "snowy",
+    "pronunciation": "[snoʊi]",
+    "type1": "형용사",
+    "meaning1": "눈에 덮힌",
+    "type2": "형용사",
+    "meaning2": "눈이 많이 내리는",
+    "example": "The snowy mountains look beautiful at sunrise.",
+    "example_korean": "눈 덮힌 산들은 일출이 아름다워 보인다."
+  },
+  {
+    "word": "windy",
+    "pronunciation": "[wɪndi]",
+    "type1": "형용사",
+    "meaning1": "바람이 많이 부는(<-> windless)",
+    "type2": "형용사",
+    "meaning2": "바람을 많이 받는",
+    "example": "It was a windy day and Lucy thought there would have storms later.",
+    "example_korean": "바람이 많이 부는 날이었고 루시는 나중에 폭풍우가 올 것이라고 생각했다."
+  },
+  {
+    "word": "giraffe",
+    "pronunciation": "[dʒə|ræf]",
+    "type1": "명사",
+    "meaning1": "기린",
+    "example": "Hundreds came to the zoo to see the newborn giraffe.",
+    "example_korean": "갓 태어난 기린은 보려고 수 백 명이 동물원을 찾았다."
+  },
+  {
+    "word": "windy",
+    "pronunciation": "[wɪndi]",
+    "type1": "형용사",
+    "meaning1": "바람이 많이 부는(<-> windless)",
+    "type2": "형용사",
+    "meaning2": "바람을 많이 받는",
+    "example": "It was a windy day and Lucy thought there would have storms later.",
+    "example_korean": "바람이 많이 부는 날이었고 루시는 나중에 폭풍우가 올 것이라고 생각했다."
+  },
+  {
+    "word": "elephant",
+    "pronunciation": "[wɪndi]",
+    "type1": "명사",
+    "meaning1": "코끼리",
+    "example": "An elephant at the zoo gave birth last week.",
+    "example_korean": "동물원의 코끼리가 지난주에 새끼를 낳았다."
+  },
+  {
+    "word": "turtle",
+    "pronunciation": "[tɜːrtl]",
+    "type1": "명사",
+    "meaning1": "바다 거북",
+    "example": "The turtle swam through the ocean.",
+    "example_korean": "거북이가 바다를 헤엄쳤다."
+  },
+  {
+    "word": "rabbit",
+    "pronunciation": "[ræbɪt]",
+    "type1": "명사",
+    "meaning1": "토끼",
+    "type2": "동사",
+    "meaning2": "토끼 사냥을 가다",
+    "example": "Rabbits have been eating the vegetables in my garden.",
+    "example_korean": "토끼들이 내 정원에서 채소를 먹고 있었다."
+  },
+  {
+    "word": "zebra",
+    "pronunciation": "[zebrə]",
+    "type1": "명사",
+    "meaning1": "얼룩말",
+    "example": "No two zebras have the same pattern of stripes.",
+    "example_korean": "어떤 두 얼룩말도 같은 무늬의 줄무늬를 가지고 있지는 않다."
+  },
+  {
+    "word": "baseball",
+    "pronunciation": "[beɪsbɔːl]",
+    "type1": "명사",
+    "meaning1": "야구",
+    "type2": "명사",
+    "meaning2": "야구공",
+    "example": "Anna enjoys many sports, such as baseball, football and rugby",
+    "example_korean": "안나는 야구와 축구, 럭비를 비롯한 많은 스포츠를 즐긴다."
+  },
+  {
+    "word": "football",
+    "pronunciation": "[fʊtbɔːl]",
+    "type1": "명사",
+    "meaning1": "축구",
+    "type2": "명사",
+    "meaning2": "미식축구",
+    "example": "He plays football; he is a quarterback.",
+    "example_korean": "그는 미식축구를 합니다. 쿼터백을 맡고 있어요."
+  },
+  {
+    "word": "basketball",
+    "pronunciation": "[bæskɪtbɔːl]",
+    "type1": "명사",
+    "meaning1": "농구",
+    "type2": "명사",
+    "meaning2": "농구공",
+    "example": "We play basketball at the gym on Wednesday nights.",
+    "example_korean": "우리는 매주 수요일 밤에 체육관에서 농구를 한다."
+  },
+  {
+    "word": "volleyball",
+    "pronunciation": "[vɑːlibɔːl]",
+    "type1": "명사",
+    "meaning1": "배구",
+    "type2": "명사",
+    "meaning2": "배구공",
+    "example": "He spends his summers at the beach playing volleyball.",
+    "example_korean": "그는 여름에 해변에서 배구를 하며 시간을 보낸다."
+  },
+  {
+    "word": "badminton",
+    "pronunciation": "[bædmɪntən]",
+    "type1": "명사",
+    "meaning1": "배드민턴",
+    "example": "We were going to play badminton but couldn't find the racquets.",
+    "example_korean": "우리는 배드민턴을 할 예정이었으나 라켓을 찾을 수 없었다."
+  },
+  {
+    "word": "KOREA",
+    "pronunciation": "[kərí:ə]",
+    "type1": "명사",
+    "meaning1": "한국 (공식 명칭 the Republic of ~, 통칭 South Korea, 수도 Seoul)",
+    "example": "Mountains can be found all over Korea.",
+    "example_korean": "산은 한국 전체에서 찾아볼 수 있다."
+  },
+  {
+    "word": "JAPAN",
+    "pronunciation": "[bædmɪntən]",
+    "type1": "명사",
+    "meaning1": "배드민턴",
+    "example": "We were going to play badminton but couldn't find the racquets.",
+    "example_korean": "우리는 배드민턴을 할 예정이었으나 라켓을 찾을 수 없었다."
+  },
+  {
+    "word": "CHINA",
+    "pronunciation": "[tʃáinə]",
+    "type1": "명사",
+    "meaning1": "중국, 중국, 중화 인민 공화국 아시아 동부의 한 공화국; 수도 Beijing",
+    "type2": "형용사",
+    "meaning2": "중국산의",
+    "example": "She was born in China but grew up in the US.",
+    "example_korean": "그녀는 중국에서 태어났지만, 미국에서 자랐다."
+  },
+  {
+    "word": "USA",
+    "pronunciation": "[juː es ˈeɪ]",
+    "type1": "명사",
+    "meaning1": "중국, 중국, 중화 인민 공화국 아시아 동부의 한 공화국; 수도 Beijing",
+    "type2": "형용사",
+    "meaning2": "중국산의",
+    "example": "She was born in China but grew up in the USA.",
+    "example_korean": "그녀는 중국에서 태어났지만, 미국에서 자랐다."
+  },
+  {
+    "word": "Thailand",
+    "pronunciation": "[táilæ̀nd]",
+    "type1": "명사",
+    "meaning1": "태국",
+    "example": "Some tourists were avoiding Thailand because of the floods.",
+    "example_korean": "몇몇 관광객들은 홍수때문에 태국을 피하고 있었다."
+  }
+]
+}
