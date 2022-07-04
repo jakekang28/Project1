@@ -94,14 +94,17 @@ public class Fragment1 extends Fragment {
 //                Item item = mAdapter.getItem(position);
 //                Toast.makeText(getActivity().getApplicationContext(), item.getName() +": 전화를 거시겠습니까?",
 //                        Toast.LENGTH_LONG).show();
-                Intent intent=new Intent(getActivity(),CallActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
+//                Intent intent=new Intent(getActivity(),CallActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+//                startActivity(intent);
+                Item curitem = phonelist.get(position);
+                String pNum = "tel:"+curitem.getNumber();
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(pNum)));
+
             }
         });
         return rootView;
     }
-
 
 
     @Override
