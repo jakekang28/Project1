@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.widget.Toast;
@@ -82,6 +83,7 @@ public class Fragment1 extends Fragment {
         //recycler view
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
+        recyclerView.addItemDecoration(new DividerItemDecoration(rootView.getContext(), 1));
         mAdapter = new MyAdapter(phonelist);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
@@ -94,14 +96,17 @@ public class Fragment1 extends Fragment {
 //                Item item = mAdapter.getItem(position);
 //                Toast.makeText(getActivity().getApplicationContext(), item.getName() +": 전화를 거시겠습니까?",
 //                        Toast.LENGTH_LONG).show();
-                Intent intent=new Intent(getActivity(),CallActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
+//                Intent intent=new Intent(getActivity(),CallActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+//                startActivity(intent);
+                Item curitem = phonelist.get(position);
+                String pNum = "tel:"+curitem.getNumber();
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(pNum)));
+
             }
         });
         return rootView;
     }
-
 
 
     @Override

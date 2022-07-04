@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import java.lang.*;
 import androidx.annotation.NonNull;
@@ -14,15 +15,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 public class BigImage extends AppCompatActivity {
-
     public BigImage(){}
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bigimageview);
         ImageView imgview = (ImageView)findViewById(R.id.bigimage);
-        ImageView imgview2 = (ImageView)findViewById(R.id.type_normal);
-
+        ImageButton imagebutton = (ImageButton)findViewById(R.id.playbutton);
         Intent intent = getIntent();
         int pos = intent.getIntExtra("position", 0);
 
@@ -97,6 +96,14 @@ public class BigImage extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 finish();
+            }
+        });
+        imagebutton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent =  new Intent(getApplicationContext(),Pokemonclip.class);
+                intent.putExtra("position",pos);
+                startActivity(intent);
             }
         });
     }

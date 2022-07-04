@@ -12,6 +12,7 @@
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/callactivity.xml" value="0.136" />
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/fragment1.xml" value="0.22146739130434784" />
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/fragment2contents.xml" value="0.12037037037037036" />
+        <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/fragment3contents.xml" value="0.2" />
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/fragmentdisplay1.xml" value="0.176" />
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/fragmentdisplay2.xml" value="0.176" />
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/fragmentdisplay3.xml" value="0.176" />
@@ -19,6 +20,8 @@
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/item_recyclerview.xml" value="0.2" />
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/phonenum_adapter.xml" value="0.1" />
         <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/phonenum_rv.xml" value="0.1" />
+        <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/pokemoncliip.xml" value="0.1" />
+        <entry key="..\:/Users/jakek/AndroidStudioProjects/Project1/app/src/main/res/layout/video.xml" value="0.10833333333333334" />
       </map>
     </option>
   </component>
