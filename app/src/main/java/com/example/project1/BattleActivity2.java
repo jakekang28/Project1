@@ -125,11 +125,6 @@ public class BattleActivity2 extends Activity {
             skillview4.setText((String) mypoke.skill4.getType(mypoke.skill4) + "\n" + (String) mypoke.skill4.getName(mypoke.skill4) + "\n" + Integer.toString(mypoke.skill4.getCount(mypoke.skill4)) + "/" + Integer.toString(cnt4));
             fight = (Button) findViewById(R.id.fightbutton);
             surrender = (Button) findViewById(R.id.surrenderbutton);
-        android.view.ViewGroup.LayoutParams pp = gauge2.getLayoutParams();
-        pp.width = 200 * (mypoke.hp/mypoke.maxhp);
-        pp.height = 15;
-        gauge2.setLayoutParams(pp);
-        gauge2.requestLayout();
             fight.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -383,7 +378,38 @@ public class BattleActivity2 extends Activity {
                                     skillview2.setVisibility(skillview2.GONE);
                                     skillview3.setVisibility(skillview3.GONE);
                                     skillview4.setVisibility(skillview4.GONE);
-                                    effect.setVisibility(effect.GONE);
+                                    Handler effecthandler = new Handler();
+                                    effecthandler.postDelayed(new Runnable(){
+                                        @Override
+                                        public void run() {
+                                            effect.setVisibility(effect.GONE);
+                                            double i = Math.random();
+                                            boolean succeed = false;
+                                            if(i<=mypoke.skill1.getProb(mypoke.skill1)){
+                                                succeed = true;
+                                            }
+                                            if(succeed)
+                                            {
+                                                yourpoke.hp = yourpoke.minusHp(mypoke.skill1);
+                                                ImageView gauge = (ImageView) findViewById(R.id.gagefront);
+                                                android.view.ViewGroup.LayoutParams pp = gauge.getLayoutParams();
+                                                pp.width = 200 * (yourpoke.hp/yourpoke.maxhp);
+                                                pp.height = 15;
+                                                gauge.setLayoutParams(pp);
+                                                gauge.requestLayout();
+                                            }
+                                            Intent intent = new Intent(getApplicationContext(),BattleActivity2.class);
+                                            intent.putExtra("position1",pos2);
+                                            intent.putExtra("position2",pos1);
+                                            intent.putExtra("myhp",mypoke.hp);
+                                            intent.putExtra("yourhp",yourpoke.hp);
+                                            if(mypoke.hp<=0 || yourpoke.hp<=0) {
+                                                Intent intent2 = new Intent(getApplicationContext(),pokemonResult.class);
+                                                startActivity(intent2);
+                                            }
+                                            startActivity(intent);
+                                        }
+                                    },1000);
                                 }
                             });
                             skillview3.setOnClickListener(new View.OnClickListener() {
@@ -489,7 +515,38 @@ public class BattleActivity2 extends Activity {
                                     skillview2.setVisibility(skillview2.GONE);
                                     skillview3.setVisibility(skillview3.GONE);
                                     skillview4.setVisibility(skillview4.GONE);
-                                    effect.setVisibility(effect.GONE);
+                                    Handler effecthandler = new Handler();
+                                    effecthandler.postDelayed(new Runnable(){
+                                        @Override
+                                        public void run() {
+                                            effect.setVisibility(effect.GONE);
+                                            double i = Math.random();
+                                            boolean succeed = false;
+                                            if(i<=mypoke.skill1.getProb(mypoke.skill1)){
+                                                succeed = true;
+                                            }
+                                            if(succeed)
+                                            {
+                                                yourpoke.hp = yourpoke.minusHp(mypoke.skill1);
+                                                ImageView gauge = (ImageView) findViewById(R.id.gagefront);
+                                                android.view.ViewGroup.LayoutParams pp = gauge.getLayoutParams();
+                                                pp.width = 200 * (yourpoke.hp/yourpoke.maxhp);
+                                                pp.height = 15;
+                                                gauge.setLayoutParams(pp);
+                                                gauge.requestLayout();
+                                            }
+                                            Intent intent = new Intent(getApplicationContext(),BattleActivity2.class);
+                                            intent.putExtra("position1",pos2);
+                                            intent.putExtra("position2",pos1);
+                                            intent.putExtra("myhp",mypoke.hp);
+                                            intent.putExtra("yourhp",yourpoke.hp);
+                                            if(mypoke.hp<=0 || yourpoke.hp<=0) {
+                                                Intent intent2 = new Intent(getApplicationContext(),pokemonResult.class);
+                                                startActivity(intent2);
+                                            }
+                                            startActivity(intent);
+                                        }
+                                    },1000);
                                 }
                             });
                             skillview4.setOnClickListener(new View.OnClickListener() {
@@ -595,7 +652,38 @@ public class BattleActivity2 extends Activity {
                                     skillview2.setVisibility(skillview2.GONE);
                                     skillview3.setVisibility(skillview3.GONE);
                                     skillview4.setVisibility(skillview4.GONE);
-                                    effect.setVisibility(effect.GONE);
+                                    Handler effecthandler = new Handler();
+                                    effecthandler.postDelayed(new Runnable(){
+                                        @Override
+                                        public void run() {
+                                            effect.setVisibility(effect.GONE);
+                                            double i = Math.random();
+                                            boolean succeed = false;
+                                            if(i<=mypoke.skill1.getProb(mypoke.skill1)){
+                                                succeed = true;
+                                            }
+                                            if(succeed)
+                                            {
+                                                yourpoke.hp = yourpoke.minusHp(mypoke.skill1);
+                                                ImageView gauge = (ImageView) findViewById(R.id.gagefront);
+                                                android.view.ViewGroup.LayoutParams pp = gauge.getLayoutParams();
+                                                pp.width = 200 * (yourpoke.hp/yourpoke.maxhp);
+                                                pp.height = 15;
+                                                gauge.setLayoutParams(pp);
+                                                gauge.requestLayout();
+                                            }
+                                            Intent intent = new Intent(getApplicationContext(),BattleActivity2.class);
+                                            intent.putExtra("position1",pos2);
+                                            intent.putExtra("position2",pos1);
+                                            intent.putExtra("myhp",mypoke.hp);
+                                            intent.putExtra("yourhp",yourpoke.hp);
+                                            if(mypoke.hp<=0 || yourpoke.hp<=0) {
+                                                Intent intent2 = new Intent(getApplicationContext(),pokemonResult.class);
+                                                startActivity(intent2);
+                                            }
+                                            startActivity(intent);
+                                        }
+                                    },1000);
                                 }
                             });
 
@@ -603,6 +691,7 @@ public class BattleActivity2 extends Activity {
                     }, 1000);
                 }
             });
+
             surrender.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

@@ -89,7 +89,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/maplestorybold"
         android:text="고라파덕"
-        android:textSize="28sp"
+        android:textSize="14sp"
         app:layout_constraintRight_toLeftOf="@id/genderfront"
         app:layout_constraintTop_toTopOf="@id/front"
         tools:layout_editor_absoluteX="7dp"
@@ -103,7 +103,7 @@
         app:layout_constraintRight_toLeftOf="@id/levelfront"
         app:layout_constraintTop_toTopOf="@id/front"
         android:text="(여): "
-        android:textSize="28sp"
+        android:textSize="14sp"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="80dp" />
 
@@ -114,7 +114,7 @@
         android:fontFamily="@font/maplestorybold"
         app:layout_constraintTop_toTopOf="@id/front"
         android:text="LV5"
-        android:textSize="28sp"
+        android:textSize="14sp"
         app:layout_constraintRight_toLeftOf="@id/front"
         tools:layout_editor_absoluteX="162dp"
         tools:layout_editor_absoluteY="80dp" />
@@ -125,7 +125,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/maplestorybold"
         android:text="꼬부기"
-        android:textSize="28sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@id/back"
         android:layout_marginBottom="60dp"
         app:layout_constraintStart_toEndOf="@+id/back" />
@@ -136,7 +136,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/maplestorybold"
         android:text="(남): "
-        android:textSize="28sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/nameback"
         app:layout_constraintTop_toTopOf="@id/nameback"
         tools:layout_editor_absoluteY="374dp" />
@@ -148,7 +148,7 @@
         android:layout_marginBottom="12dp"
         android:fontFamily="@font/maplestorybold"
         android:text="LV5"
-        android:textSize="28sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@id/genderback"
         app:layout_constraintTop_toTopOf="@id/genderback"
         tools:layout_editor_absoluteX="315dp" />
@@ -191,12 +191,12 @@
 
     <Button
         android:id="@+id/skillbutton1"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/battle"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="48dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:text="Button1"
         android:fontFamily="@font/maplestorybold"
         tools:layout_editor_absoluteX="60dp"
@@ -205,12 +205,12 @@
 
     <Button
         android:id="@+id/skillbutton2"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/battle"
         android:layout_marginRight="48dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:text="Button2"
         android:fontFamily="@font/maplestorybold"
         tools:layout_editor_absoluteX="251dp"
@@ -219,12 +219,12 @@
 
     <Button
         android:id="@+id/skillbutton3"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginLeft="48dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="10dp"
         android:text="Button3"
         android:fontFamily="@font/maplestorybold"
         tools:layout_editor_absoluteX="60dp"
@@ -233,11 +233,11 @@
 
     <Button
         android:id="@+id/skillbutton4"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginRight="48dp"
         android:text="Button4"
         android:fontFamily="@font/maplestorybold"
@@ -270,17 +270,7 @@
         app:layout_constraintTop_toBottomOf="@+id/battle"
         android:visibility="invisible"/>
 
-    <TextView
-        android:id="@+id/hpnumback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="textview"
-        android:fontFamily="@font/maplestorybold"
-        app:layout_constraintLeft_toRightOf="@id/lineback"
-        app:layout_constraintTop_toTopOf="@id/lineback"
-        android:layout_marginLeft="15dp"/>
-
-<!--    <TextView-->
+    <!--    <TextView-->
 <!--        android:id="@+id/hpnumfront"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
