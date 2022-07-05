@@ -136,9 +136,15 @@ public class BattleActivity extends Activity {
                 skillview4.setVisibility(skillview4.VISIBLE);
                 skillview1.setOnClickListener(new View.OnClickListener(){
                     Handler handler = new Handler();
-                    handler.postDelayed(new Runnable(){
-                        @Override
-                    });
+                  Runnable run = new Runnable() {
+                      @Override
+                      public void run() {
+                          public void onClick(View view){
+
+                          }
+                      }
+                  };
+                  handler.postDelayed(run(),1000);
                 });
             }
         });
