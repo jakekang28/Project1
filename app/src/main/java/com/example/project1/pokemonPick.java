@@ -21,6 +21,7 @@ public class pokemonPick extends Activity {
     private RecyclerView recyclerView;
     private ImageAdapter iAdapter;
     private Button btn;
+    private int clickcnt = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +50,16 @@ public class pokemonPick extends Activity {
         iAdapter.setOnItemClicklistener(new OnPersonItemClickListener(){
             @Override
             public void onItemClick(ImageAdapter.imgViewHolder holder, View view, int pos) {
-                if(clicked[pos+1]){
+                if(clicked[pos+1]){//click off
                     holder.itemView.setBackgroundColor(Color.WHITE);
+                    clickcnt -= 1;
                 }
                 else{
+                    if(clickcnt == 2){
+                        return;
+                    }
                     holder.itemView.setBackgroundColor(Color.RED);
+                    clickcnt += 1;
                 }
                 clicked[pos + 1] = !clicked[pos+1];
             }
@@ -63,16 +69,27 @@ public class pokemonPick extends Activity {
         btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                int cnt = 0;
-                for(int i = 1; i <= 20; i++){
-                    if(clicked[i]) cnt++;
-                }
-                if(cnt == 2){
-                    //intent로 게임 화면 전환
-                    //clicked인 두 position getextra로 넘겨받음
+                if(clickcnt == 2){
+                    boolean two = false;
+                    int pos1 = 0;
+                    int pos2= 0; //two characters' position
+                    for(int i=1;i<=20;i++){
+                        if(clicked[i] && !two){
+                            pos1 = i;
+                            two = true;
+                        }
+                        else if(clicked[i] && two){
+                            pos2 = i;
+                            break;
+                        }
+                    }
+                    Intent intent = new Intent(getApplicationContext(),BattleActivity.class);
+                    intent.putExtra("position1",pos1);
+                    intent.putExtra("position2",pos2);
+                    startActivity(intent);
                 }
                 else{
-                    Toast.makeText(getApplicationContext(),"두 캐릭터를 선택하세요.",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Select two Pokemons.",Toast.LENGTH_SHORT).show();
                 }
             }
         });

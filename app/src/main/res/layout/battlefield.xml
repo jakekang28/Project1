@@ -1,24 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="4"
-    android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@android:color/black"
+    android:orientation="horizontal">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/battle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:src="@drawable/battlefield"
         android:scaleType="fitXY"
-        />
+        android:src="@drawable/battlefield"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.75"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+
+    <ImageView
+        android:id="@+id/front"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="@id/battle"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="335dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/hpback"
+        android:layout_width="39dp"
+        android:layout_height="22dp"
+        android:layout_marginLeft="-25dp"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toBottomOf="@id/battle"
+        app:layout_constraintLeft_toRightOf="@id/back"
+        app:srcCompat="@drawable/hp"
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="477dp" />
+
+    <ImageView
+        android:id="@+id/hpfront"
+        android:layout_width="39dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintLeft_toLeftOf="@+id/namefront"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hp" />
+
+    <ImageView
+        android:id="@+id/gageback"
+        android:layout_width="198dp"
+        android:layout_height="15dp"
+        app:layout_constraintLeft_toRightOf="@+id/hpback"
+        app:layout_constraintTop_toTopOf="@+id/hpback"
+        app:srcCompat="@drawable/gage" />
+
+    <ImageView
+        android:id="@+id/gagefront"
+        android:layout_width="198dp"
+        android:layout_height="15dp"
+        app:layout_constraintLeft_toRightOf="@+id/hpfront"
+        app:layout_constraintTop_toTopOf="@id/hpfront"
+        app:srcCompat="@drawable/gage"
+        tools:layout_editor_absoluteY="48dp" />
+
+    <ImageView
+        android:id="@+id/linefront"
+        android:layout_width="268dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintLeft_toLeftOf="@+id/hpfront"
+        app:layout_constraintTop_toTopOf="@id/hpfront"
+        app:srcCompat="@drawable/blackline"
+        tools:layout_editor_absoluteY="48dp" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3"
-        />
-</LinearLayout>
+        android:id="@+id/namefront"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/maplestorybold"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/front" />
+
+    <TextView
+        android:id="@+id/genderfront"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/maplestorybold"
+        android:text="(여): "
+        android:textSize="28sp"
+        app:layout_constraintStart_toEndOf="@+id/namefront"
+        app:layout_constraintTop_toTopOf="@id/front"
+        tools:layout_editor_absoluteY="94dp" />
+
+    <TextView
+        android:id="@+id/levelfront"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/maplestorybold"
+        android:text="LV5"
+        android:textSize="28sp"
+        app:layout_constraintStart_toEndOf="@+id/genderfront"
+        app:layout_constraintTop_toTopOf="@id/front"
+        tools:layout_editor_absoluteY="94dp" />
+
+    <TextView
+        android:id="@+id/nameback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/maplestorybold"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@id/back"
+        app:layout_constraintStart_toEndOf="@+id/back" />
+
+    <TextView
+        android:id="@+id/genderback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/maplestorybold"
+        android:text="(남): "
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@id/back"
+        app:layout_constraintStart_toEndOf="@+id/nameback"
+        tools:layout_editor_absoluteY="432dp" />
+
+    <TextView
+        android:id="@+id/levelback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/maplestorybold"
+        android:text="LV5"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@id/back"
+        app:layout_constraintStart_toEndOf="@+id/genderback"
+        tools:layout_editor_absoluteY="432dp" />
+
+    <Button
+        android:id="@+id/fightbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="67dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginBottom="67dp"
+        android:fontFamily="@font/maplestorybold"
+        android:text="Fight!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/battle"
+        tools:layout_editor_absoluteX="65dp" />
+
+    <Button
+        android:id="@+id/surrenderbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:fontFamily="@font/maplestorybold"
+        android:text="Surrender!"
+        app:layout_constraintStart_toEndOf="@+id/fightbutton"
+        app:layout_constraintTop_toTopOf="@id/fightbutton"
+        tools:layout_editor_absoluteY="616dp" />
+
+
+    <ImageView
+        android:id="@+id/lineback"
+        android:layout_width="268dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintLeft_toLeftOf="@id/hpback"
+        app:layout_constraintTop_toTopOf="@id/hpback"
+        app:srcCompat="@drawable/blackline"
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="477dp" />
+
+    <Button
+        android:id="@+id/skillbutton1"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="10dp"
+        android:text="Button"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/battle" />
+
+    <Button
+        android:id="@+id/skillbutton2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="48dp"
+        android:text="Button"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/battle" />
+
+    <Button
+        android:id="@+id/skillbutton3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginBottom="20dp"
+        android:text="Button"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/skillbutton4"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="48dp"
+        android:layout_marginBottom="20dp"
+        android:text="Button"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
