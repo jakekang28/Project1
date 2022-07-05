@@ -5,8 +5,10 @@ import android.graphics.drawable.DrawableWrapper;
 
 public class Pokemon {
     String name;
-    int picture;
+    int picturef;
+    int pictureb;
     int hp;
+    int maxhp;
     String gender;
     String type1;
     String type2;
@@ -15,10 +17,12 @@ public class Pokemon {
     Skill skill3;
     Skill skill4;
 
-    public Pokemon(String name, int picture, int hp, String gender, String type1,String type2, Skill skill1, Skill skill2, Skill skill3, Skill skill4) {
+    public Pokemon(String name, int picturef,int pictureb, int hp,int maxhp, String gender, String type1,String type2, Skill skill1, Skill skill2, Skill skill3, Skill skill4) {
         this.name = name;
-        this.picture = picture;
+        this.picturef = picturef;
+        this.pictureb = pictureb;
         this.hp = hp;
+        this.maxhp = maxhp;
         this.gender = gender;
         this.type1 = type1;
         this.type2 = type2;
@@ -32,14 +36,19 @@ public class Pokemon {
         return pokemon.name;
     }
 
-    public int getPicture(Pokemon pokemon) {
-        return pokemon.picture;
+    public int getPicturef(Pokemon pokemon) {
+        return pokemon.picturef;
+    }
+    public int getPictureb(Pokemon pokemon) {
+        return pokemon.pictureb;
     }
 
     public int getHp(Pokemon pokemon) {
         return pokemon.hp;
     }
-
+    public int getMaxHp(Pokemon pokemon) {
+        return pokemon.maxhp;
+    }
     public String getGender(Pokemon pokemon) {
         return pokemon.gender;
     }
@@ -67,14 +76,18 @@ public class Pokemon {
         pokemon.name=name;
     }
 
-    public void setPicture(Pokemon pokemon) {
-        pokemon.picture=picture;
+    public void setPicturef(Pokemon pokemon) {
+        pokemon.picturef=picturef;
     }
-
+    public void setPictureb(Pokemon pokemon) {
+        pokemon.pictureb=pictureb;
+    }
     public void setHp(Pokemon pokemon) {
         pokemon.hp=hp;
     }
-
+    public void setMaxHp(Pokemon pokemon) {
+        pokemon.maxhp=maxhp;
+    }
     public void setGender(Pokemon pokemon) {
         pokemon.gender=gender;
     }
@@ -96,5 +109,9 @@ public class Pokemon {
     }
     public void setSkill4(Pokemon pokemon) {
         pokemon.skill4=skill4;
+    }
+    public int minusHp(Skill skill){
+        this.hp = this.hp-(int)((this.hp * skill.getPower(skill) / 100) * (1 - skill.getProb(skill)));
+        return this.hp;
     }
 }

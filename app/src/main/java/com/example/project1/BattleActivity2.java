@@ -7,16 +7,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-public class BattleActivity extends Activity {
+public class BattleActivity2 extends Activity {
     public String gender() {
         double i = Math.random();
         if (i <= 0.5) return "(남) :";
@@ -37,7 +35,7 @@ public class BattleActivity extends Activity {
     Skill Imitate = new Skill("Imitate", "normal", 1, 50, 0);
     // water type
     Skill Watergun = new Skill("Watergun", "water", 0.9, 30, 40);
-    Skill BubbleBeam = new Skill("BubbleBeam", "water", 0.7, 20, 200);
+    Skill BubbleBeam = new Skill("BubbleBeam", "water", 0.7, 20, 55);
     Skill HydroPump = new Skill("HydroPump", "water", 0.5, 10, 75);
     Skill WhirlPool = new Skill("WhirlPool", "water", 0.8, 15, 60);
     Skill AquaBreak = new Skill("AquaBreak", "water", 0.7, 20, 65);
@@ -87,7 +85,6 @@ public class BattleActivity extends Activity {
     Pokemon[] pokemonset = {Bulbasaur, Squirtle, Charmander, Caterpie, Pikachu, Jigglypuff, Diglett, Meowth, Psyduck, Slowbro, Horsea, Goldeen, Ditto, Eevee, Snorlax, Mew, Woubuffet, Torchic, Piplup, Pachirisu};
     private Button fight;
     private Button surrender;
-
     @Override
     public void onCreate(Bundle SavedInstanceState) {
         super.onCreate(SavedInstanceState);
@@ -128,7 +125,7 @@ public class BattleActivity extends Activity {
             skillview4.setText((String) mypoke.skill4.getType(mypoke.skill4) + "\n" + (String) mypoke.skill4.getName(mypoke.skill4) + "\n" + Integer.toString(mypoke.skill4.getCount(mypoke.skill4)) + "/" + Integer.toString(cnt4));
             fight = (Button) findViewById(R.id.fightbutton);
             surrender = (Button) findViewById(R.id.surrenderbutton);
-        ViewGroup.LayoutParams pp = gauge2.getLayoutParams();
+        android.view.ViewGroup.LayoutParams pp = gauge2.getLayoutParams();
         pp.width = 200 * (mypoke.hp/mypoke.maxhp);
         pp.height = 15;
         gauge2.setLayoutParams(pp);
@@ -269,7 +266,7 @@ public class BattleActivity extends Activity {
                                                 gauge.setLayoutParams(pp);
                                                 gauge.requestLayout();
                                             }
-                                            Intent intent = new Intent(getApplicationContext(),BattleActivity2.class);
+                                            Intent intent = new Intent(getApplicationContext(),BattleActivity.class);
                                             intent.putExtra("position1",pos2);
                                             intent.putExtra("position2",pos1);
                                             intent.putExtra("myhp",mypoke.hp);
@@ -606,26 +603,26 @@ public class BattleActivity extends Activity {
                     }, 1000);
                 }
             });
-        surrender.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switch (view.getId()) {
-                    case R.id.surrenderbutton:
-                        new AlertDialog.Builder(BattleActivity.this).setTitle("Alert").setMessage("You are about to lose!\n\n Are you sure you want to continue?").setNegativeButton("Return to Battle", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                Toast.makeText(BattleActivity.this, "Return to Battle", Toast.LENGTH_SHORT).show();
-                            }
-                        }).setPositiveButton("Surrender", new DialogInterface.OnClickListener() {
-                            @Override
+            surrender.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    switch (view.getId()) {
+                        case R.id.surrenderbutton:
+                            new AlertDialog.Builder(BattleActivity2.this).setTitle("Alert").setMessage("You are about to lose!\n\n Are you sure you want to continue?").setNegativeButton("Return to Battle", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    Toast.makeText(BattleActivity2.this, "Return to Battle", Toast.LENGTH_SHORT).show();
+                                }
+                            }).setPositiveButton("Surrender", new DialogInterface.OnClickListener() {
+                                @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
                                     Intent intent = new Intent(getApplicationContext(),pokemonResult.class);
                                     intent.putExtra("winner",yourpoke.picturef);
                                     startActivity(intent);
                                 }
-                        }).create().show();
+                            }).create().show();
+                    }
                 }
-            }
-        });
+            });
         }
 }

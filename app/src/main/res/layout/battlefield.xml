@@ -7,6 +7,7 @@
     android:background="@android:color/black"
     android:orientation="horizontal">
 
+
     <ImageView
         android:id="@+id/battle"
         android:layout_width="match_parent"
@@ -17,13 +18,22 @@
         app:layout_constraintHeight_default="percent"
         app:layout_constraintHeight_percent="0.75"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="169dp"
+        android:layout_height="166dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="@id/battle"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
         android:id="@+id/front"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
+        android:layout_width="169dp"
+        android:layout_height="166dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,106 +41,93 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="80dp"
-        app:layout_constraintBottom_toBottomOf="@id/battle"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="335dp"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageView
         android:id="@+id/hpback"
         android:layout_width="39dp"
         android:layout_height="22dp"
-        android:layout_marginLeft="-25dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="@id/battle"
-        app:layout_constraintLeft_toRightOf="@id/back"
-        app:srcCompat="@drawable/hp"
-        tools:layout_editor_absoluteX="127dp"
-        tools:layout_editor_absoluteY="477dp" />
+        app:layout_constraintLeft_toLeftOf="@id/back"
+        app:layout_constraintTop_toBottomOf="@+id/back"
+        android:src="@drawable/hp" />
 
     <ImageView
         android:id="@+id/hpfront"
         android:layout_width="39dp"
         android:layout_height="22dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintLeft_toLeftOf="@+id/namefront"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hp" />
+        app:layout_constraintLeft_toLeftOf="@id/linefront"
+        app:layout_constraintTop_toTopOf="@id/linefront"
+        android:src="@drawable/hp" />
 
     <ImageView
         android:id="@+id/gageback"
-        android:layout_width="198dp"
+        android:layout_width="200dp"
         android:layout_height="15dp"
         app:layout_constraintLeft_toRightOf="@+id/hpback"
         app:layout_constraintTop_toTopOf="@+id/hpback"
-        app:srcCompat="@drawable/gage" />
+        android:src="@drawable/gage" />
 
     <ImageView
         android:id="@+id/gagefront"
-        android:layout_width="198dp"
+        android:layout_width="200dp"
         android:layout_height="15dp"
         app:layout_constraintLeft_toRightOf="@+id/hpfront"
         app:layout_constraintTop_toTopOf="@id/hpfront"
-        app:srcCompat="@drawable/gage"
-        tools:layout_editor_absoluteY="48dp" />
+        android:src="@drawable/gage" />
 
     <ImageView
         android:id="@+id/linefront"
         android:layout_width="268dp"
         android:layout_height="36dp"
-        android:layout_marginTop="2dp"
-        app:layout_constraintLeft_toLeftOf="@+id/hpfront"
-        app:layout_constraintTop_toTopOf="@id/hpfront"
-        app:srcCompat="@drawable/blackline"
-        tools:layout_editor_absoluteY="48dp" />
+        app:layout_constraintEnd_toEndOf="@id/front"
+        app:layout_constraintBottom_toTopOf="@id/front"
+        android:src="@drawable/blackline" />
 
     <TextView
         android:id="@+id/namefront"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:fontFamily="@font/maplestorybold"
+        android:text="고라파덕"
         android:textSize="28sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/front" />
+        app:layout_constraintRight_toLeftOf="@id/genderfront"
+        app:layout_constraintTop_toTopOf="@id/front"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="80dp" />
 
     <TextView
         android:id="@+id/genderfront"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/maplestorybold"
+        app:layout_constraintRight_toLeftOf="@id/levelfront"
+        app:layout_constraintTop_toTopOf="@id/front"
         android:text="(여): "
         android:textSize="28sp"
-        app:layout_constraintStart_toEndOf="@+id/namefront"
-        app:layout_constraintTop_toTopOf="@id/front"
-        tools:layout_editor_absoluteY="94dp" />
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="80dp" />
 
     <TextView
         android:id="@+id/levelfront"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/maplestorybold"
+        app:layout_constraintTop_toTopOf="@id/front"
         android:text="LV5"
         android:textSize="28sp"
-        app:layout_constraintStart_toEndOf="@+id/genderfront"
-        app:layout_constraintTop_toTopOf="@id/front"
-        tools:layout_editor_absoluteY="94dp" />
+        app:layout_constraintRight_toLeftOf="@id/front"
+        tools:layout_editor_absoluteX="162dp"
+        tools:layout_editor_absoluteY="80dp" />
 
     <TextView
         android:id="@+id/nameback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:fontFamily="@font/maplestorybold"
+        android:text="꼬부기"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="@id/back"
+        android:layout_marginBottom="60dp"
         app:layout_constraintStart_toEndOf="@+id/back" />
 
     <TextView
@@ -140,34 +137,36 @@
         android:fontFamily="@font/maplestorybold"
         android:text="(남): "
         android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="@id/back"
         app:layout_constraintStart_toEndOf="@+id/nameback"
-        tools:layout_editor_absoluteY="432dp" />
+        app:layout_constraintTop_toTopOf="@id/nameback"
+        tools:layout_editor_absoluteY="374dp" />
 
     <TextView
         android:id="@+id/levelback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
         android:fontFamily="@font/maplestorybold"
         android:text="LV5"
         android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="@id/back"
-        app:layout_constraintStart_toEndOf="@+id/genderback"
-        tools:layout_editor_absoluteY="432dp" />
+        app:layout_constraintStart_toEndOf="@id/genderback"
+        app:layout_constraintTop_toTopOf="@id/genderback"
+        tools:layout_editor_absoluteX="315dp" />
 
     <Button
         android:id="@+id/fightbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="67dp"
         android:layout_marginTop="67dp"
         android:layout_marginBottom="67dp"
         android:fontFamily="@font/maplestorybold"
         android:text="Fight!"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="67dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/battle"
-        tools:layout_editor_absoluteX="65dp" />
+        tools:layout_editor_absoluteX="65dp"
+        />
 
     <Button
         android:id="@+id/surrenderbutton"
@@ -176,65 +175,119 @@
         android:layout_marginStart="92dp"
         android:fontFamily="@font/maplestorybold"
         android:text="Surrender!"
-        app:layout_constraintStart_toEndOf="@+id/fightbutton"
         app:layout_constraintTop_toTopOf="@id/fightbutton"
-        tools:layout_editor_absoluteY="616dp" />
+        app:layout_constraintStart_toEndOf="@+id/fightbutton"
+        tools:layout_editor_absoluteY="616dp"
+        />
 
 
     <ImageView
         android:id="@+id/lineback"
         android:layout_width="268dp"
         android:layout_height="36dp"
-        android:layout_marginTop="2dp"
         app:layout_constraintLeft_toLeftOf="@id/hpback"
         app:layout_constraintTop_toTopOf="@id/hpback"
-        app:srcCompat="@drawable/blackline"
-        tools:layout_editor_absoluteX="127dp"
-        tools:layout_editor_absoluteY="477dp" />
+        android:src="@drawable/blackline" />
 
     <Button
         android:id="@+id/skillbutton1"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="10dp"
-        android:text="Button"
-        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/battle"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/battle" />
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="30dp"
+        android:text="Button1"
+        android:fontFamily="@font/maplestorybold"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="586dp"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/skillbutton2"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="48dp"
-        android:text="Button"
-        android:visibility="invisible"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/battle" />
+        app:layout_constraintTop_toBottomOf="@id/battle"
+        android:layout_marginRight="48dp"
+        android:layout_marginTop="30dp"
+        android:text="Button2"
+        android:fontFamily="@font/maplestorybold"
+        tools:layout_editor_absoluteX="251dp"
+        tools:layout_editor_absoluteY="586dp"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/skillbutton3"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="48dp"
-        android:layout_marginBottom="20dp"
-        android:text="Button"
-        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_marginLeft="48dp"
+        android:layout_marginBottom="30dp"
+        android:text="Button3"
+        android:fontFamily="@font/maplestorybold"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="653dp"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/skillbutton4"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="30dp"
         android:layout_marginRight="48dp"
-        android:layout_marginBottom="20dp"
-        android:text="Button"
+        android:text="Button4"
+        android:fontFamily="@font/maplestorybold"
+        tools:layout_editor_absoluteX="251dp"
+        tools:layout_editor_absoluteY="653dp"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/attackimage"
+        android:layout_width="218dp"
+        android:layout_height="189dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338"
+        tools:srcCompat="@tools:sample/avatars" />
 
+    <TextView
+        android:id="@+id/statemessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/maplestorybold"
+        android:text="공격 성공/실패"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/battle"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/hpnumback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="textview"
+        android:fontFamily="@font/maplestorybold"
+        app:layout_constraintLeft_toRightOf="@id/lineback"
+        app:layout_constraintTop_toTopOf="@id/lineback"
+        android:layout_marginLeft="15dp"/>
+
+<!--    <TextView-->
+<!--        android:id="@+id/hpnumfront"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="textview"-->
+<!--        android:fontFamily="@font/maplestorybold"-->
+<!--        app:layout_constraintTop_toTopOf="@id/linefront"-->
+<!--        app:layout_constraintRight_toLeftOf="@id/linefront"-->
+<!--        android:layout_marginRight="15dp"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,5 +28,7 @@
         <activity android:name=".Pokemonclip"/>
         <activity android:name=".pokemonPick"/>
         <activity android:name =".BattleActivity" />
+        <activity android:name =".pokemonResult"/>
+        <activity android:name=".BattleActivity2"/>
     </application>
 </manifest>
